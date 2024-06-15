@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PunPun</title>
+  <!-- Bootstrap CSS -->
+  <link href="bootstrap-5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <!-- css -->
+  <link rel="stylesheet" href="style.css">
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- lightbox -->
+  <link rel="stylesheet" href="simplelightbox-master/dist/simple-lightbox.min.css">
+  <!-- hover css -->
+  <link rel="stylesheet" href="Hover-master/css/hover.css">
+  <!-- animated css -->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+<!-- aos -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg shadow " id="navbar">
+    <div class="container">
+      <a class="navbar-brand">RelPun</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link me-5 aktif " href="#navbar">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-5 " href="#about">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-5" href="#project">Project</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Kontak</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-light py-5" id="home">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <p class="sambutan">Hi,</p>
+          <p class="judul">I'm, Farel Puna Nugraha</p>
+          <div class="typing-container">
+            <p id="typing-text"s></p>
+          </div>
+          <a href="https://drive.google.com/file/d/1AoPJJy2KDNRqKc1bTs9oB7B300ivNPdu/view?usp=drive_link" target="_blank" class="btn custom-btn mt-2 hvr-icon-up"><i class="fa-solid fa-download hvr-icon"></i> Download CV!</a>
+          <div class="social-container mt-3">
+            <p class="social-title">follow me on</p>
+            <a href="https://www.instagram.com/farel_puna" target="_blank" class="social-icon me-3"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+            <a href="https://www.tiktok.com/@puunnnpun" target="_blank" class="social-icon me-3"><i class="fa-brands fa-tiktok fa-2xl"></i></a>
+            <a href="https://github.com/FarelPunaa" target="_blank" class="social-icon me-3"><i class="fa-brands fa-github fa-2xl"></i></a>
+          </div>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="assets/foto/profil.png" alt="profil.png" class="img-fluid animate__animated animate__rubberBand hvr-wobble-horizontal" style="max-width: 100%; height: auto;"  data-aos="fade-up">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <style>
+    #typing-text{
+      font-size:26px;
+      font-weight: 700;
+      font-style: normal;
+    }
+    /* Blinking cursor animation */
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    #typing-text::after {
+      content: '|';
+      animation: blink 1s infinite;
+    }
+  </style>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const texts = ['student', 'full-stack developer']; // Array kata yang akan ditampilkan
+  let textIndex = 0; // Indeks kata saat ini dalam array
+  let charIndex = 0; // Indeks karakter saat ini dalam kata
+  const typingText = document.getElementById('typing-text');
+
+  function type() {
+    if (charIndex < texts[textIndex].length) {
+      // Tambahkan karakter ke elemen dengan efek ketikan
+      typingText.textContent += texts[textIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, 200); // Waktu jeda antara penambahan karakter (dalam milidetik)
+    } else {
+      // Kata saat ini sudah selesai ditampilkan
+      setTimeout(erase, 1000); // Waktu jeda sebelum menghapus kata (dalam milidetik)
+    }
+  }
+
+  function erase() {
+    if (charIndex > 0) {
+      // Hapus karakter dari elemen dengan efek penghapusan
+      typingText.textContent = texts[textIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(erase, 100); // Waktu jeda antara penghapusan karakter (dalam milidetik)
+    } else {
+      // Kata sudah dihapus, pindah ke kata berikutnya
+      textIndex = (textIndex + 1) % texts.length; // Pindah ke indeks kata berikutnya dalam array, dengan mengulangi dari awal jika sudah mencapai akhir array
+      setTimeout(type, 1000); // Waktu jeda sebelum menampilkan kata berikutnya (dalam milidetik)
+    }
+  }
+
+  type(); // Mulai proses ketik
+  });
+
+  </script>
+
+  <!-- About Me -->
+  <section id="about" class="py-5" >
+    <div class="container">
+      <div class="row">
+        <p class="about-title">About Me</p>
+        <div class="col-sm-4" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/foto/foto.jpg" alt="foto.jpg" class="gambar img-fluid shadow-lg" style="width: 250px;">
+        </div>
+        <div class="col-sm-8" data-aos="fade-up" data-aos-delay="400">
+            <p class="lead">Hi, saya <span style="color: #4b208c;">Farel Puna Nugraha</span>. Saya seorang pelajar SMK dari jurusan RPL yang penuh semangat dalam menjelajahi dunia web dan robotika.
+            Saya percaya teknologi memiliki kekuatan besar untuk merubah dunia, dan saya bertekad untuk menjadi bagian dari perubahan tersebut. Saya senang mengeksplorasi kreativitas dan inovasi melalui pemrograman dan desain web, sambil mengejar minat saya dalam pengembangan robotika.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Project -->
+  <section id="project" class="bg-light py-5">
+    <div class="container">
+      <p class="project-title">Project</p>
+      <p class="lead">Lihat beberapa proyek yang saya kerjakan.</p>
+      <!-- Portfolio items -->
+      <swiper-container class="mySwiper" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
+      slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
+      coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true" >
+          <swiper-slide data-aos="zoom-in-up" data-aos-delay="100">
+                <iframe width="auto" height="200px" src="https://youtube.com/embed/lOfqILBBoxg/?controls=0" ></iframe>
+          </swiper-slide>
+          <swiper-slide  data-aos="zoom-in-up" data-aos-delay="100">
+                <iframe width="auto" height="200px" src="https://youtube.com/embed/jflxhJf0L50?controls=0" ></iframe>
+          </swiper-slide>
+          <swiper-slide  data-aos="zoom-in-up" data-aos-delay="100">
+                <iframe width="auto" height="200px" src="https://youtube.com/embed/MPLjtOU0CrM/?controls=0"></iframe>
+          </swiper-slide>
+          <swiper-slide class="p"  data-aos="zoom-in-up" data-aos-delay="100">
+                <a href="assets/Screenshot 2024-04-23 190847.png" target="_blank" class="text-decoration-none" style="color:#4b208c"><img src="assets/foto/Screenshot 2024-04-23 190847.png" alt="" class="card-img-top rounded mb-3" data-lightbox="gallery" data-title="project">Aplikasi Kas Online</a>
+          </swiper-slide>
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                new SimpleLightbox('.p a', {
+                    close: true,
+                    closeText: '<i class="fas fa-times"></i>',
+                });
+            });
+        </script>
+            <!-- Tambahkan slide sesuai kebutuhan -->
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>    
+    </div>
+    <!-- certificate -->
+    <div class="container" >
+      <p class="project-title">Certificate</p>
+      <p class="lead">Lihat beberapa certificate yang saya dapatkan.</p>
+      <div class="row">
+          <div class="col-sm-4 mb-2" data-aos="zoom-in-up" data-aos-delay="100">
+            <div class="card">
+              <a href="assets/foto/C-berkarir.jpg" data-lightbox="gallery" data-title="Gambar 1"><img src="assets/foto/C-berkarir.jpg" class="card-img-top" alt="Gambar1"></a>
+            </div>
+          </div>
+          <div class="col-sm-4 mb-2" data-aos="zoom-in-up" data-aos-delay="200">
+            <div class="card">
+              <a href="assets/foto/C-Javascript.jpg" data-lightbox="gallery" data-title="Gambar 2"><img src="assets/foto/C-Javascript.jpg" class="card-img-top" alt="..."></a>
+            </div>
+          </div>
+          <div class="col-sm-4 mb-2" data-aos="zoom-in-up" data-aos-delay="300">
+            <div class="card">
+              <a href="assets/foto/C-front-end.jpg" data-lightbox="gallery" data-title="Gambar 3"><img src="assets/foto/C-front-end.jpg" class="card-img-top" alt="..."></a>
+            </div>
+          </div>
+          <div class="col-sm-4 mb-2" data-aos="zoom-in-up" data-aos-delay="400">
+            <div class="card">
+              <a href="assets/foto/C-Logic.jpg" data-lightbox="gallery" data-title="Gambar 4"><img src="assets/foto/C-Logic.jpg" class="card-img-top" alt="..."></a>
+            </div>
+          </div>
+          <div class="col-sm-4 mb-2" data-aos="zoom-in-up" data-aos-delay="500">
+            <div class="card">
+              <a href="assets/foto/C-visualisaiData.jpg" data-lightbox="gallery" data-title="Gambar 5"><img src="assets/foto/C-visualisaiData.jpg" class="card-img-top" alt="..."></a>
+            </div>
+          </div>
+          <div class="col-sm-4 mb-2" data-aos="zoom-in-up" data-aos-delay="600">
+            <div class="card">
+              <a href="assets/foto/C-pemrogramanWeb.jpg" data-lightbox="gallery" data-title="Gambar 6"><img src="assets/foto/C-pemrogramanWeb.jpg" class="card-img-top" alt="..."></a>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- lightbox -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          new SimpleLightbox('.card a', {
+              close: true,
+              closeText: '<i class="fas fa-times"></i>',
+          });
+      });
+  </script>
+  
+
+
+  </section>
+  <!-- swiper js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <style>
+    swiper-container {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+      }
+
+      swiper-slide img {
+        display: block;
+        width: 100%;
+      }
+      swiper-container {
+      width: 100%;
+      height: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+  </style>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5" >
+    <div class="container">
+      <div class="row" data-aos="fade-right" data-aos-delay="200">
+        <div class="col-sm-6">
+          <!-- Contact information -->
+          <h2 class="contact-title">Informasi Kontak</h2>
+          <p class="lead">Anda juga dapat menghubungi saya melalui:</p>
+          <ul>
+            <li>Email: farelpunn@gmail.com</li>
+            <p>atau</p>
+            <div class="social-container">
+              <li>
+                <a href="https://www.instagram.com/farel_puna" target="_blank" class="social-icon me-3"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href="https://www.tiktok.com/@puunnnpun" target="_blank" class="social-icon me-3"><i class="fa-brands fa-tiktok fa-2xl"></i></a>
+                <a href="https://github.com/FarelPunaa" target="_blank" class="social-icon me-3"><i class="fa-brands fa-github fa-2xl"></i></a>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tambahkan tombol arah ke atas -->
+  <a href="#navbar" class="btn btn-primary btn-floating btn-lg" id="btn-back-to-top" role="button">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+  <div id="progress-container" class="hidden">
+    <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+
+
+
+  <!-- Footer -->
+  <footer class="footer text-white py-4 text-center">
+    <div class="container">
+      <p>&copy; 2024 RelPun</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap-5.3.3/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<!-- lightbox -->
+<script src="simplelightbox-master/dist/simple-lightbox.min.js"></script>
+<!-- aos -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Your custom scripts -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault(); // Menghentikan aksi default dari link
+      
+      const targetId = this.getAttribute('href'); // Mendapatkan id target dari href
+      const targetSection = document.querySelector(targetId); // Memilih section dengan id yang sesuai
+      
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop,
+          behavior: 'smooth' // Animasi smooth scroll
+        });
+      }
+    });
+  });
+
+  // Menampilkan atau menyembunyikan tombol arah ke atas
+  const btnBackToTop = document.getElementById('btn-back-to-top');
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      btnBackToTop.classList.add('show');
+    } else {
+      btnBackToTop.classList.remove('show');
+    }
+  });
+
+  btnBackToTop.addEventListener('click', function(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // Simulasikan klik pada tautan "Home" saat halaman dimuat
+  const homeLink = document.querySelector('.nav-link[href="#navbar"]');
+  homeLink.click();
+  });
+
+
+    // Ambil semua elemen nav-link
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Loop melalui setiap nav-link
+navLinks.forEach(link => {
+    // Tambahkan event listener untuk setiap nav-link
+    link.addEventListener('click', function() {
+        // Hapus kelas active dari semua nav-item
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.classList.remove('aktif');
+        });
+
+        // Tambahkan kelas active ke nav-item yang berisi nav-link yang diklik
+        this.parentElement.classList.add('aktif');
+    });
+});
+// scrol bar
+window.addEventListener('scroll', function() {
+  // Hitung kemajuan pengguna
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+  const clientHeight = document.documentElement.clientHeight || window.innerHeight;
+  const scrolled = (scrollTop / (scrollHeight - clientHeight)) * 100;
+
+  // Perbarui lebar progres bar sesuai dengan kemajuan pengguna
+  document.getElementById('progress-bar').style.width = scrolled + '%';
+
+  // Tambahkan atau hapus kelas untuk menampilkan atau menyembunyikan progres bar
+  if (scrolled > 20) {
+    document.getElementById('progress-container').classList.remove('hidden');
+  } else {
+    document.getElementById('progress-container').classList.add('hidden');
+  }
+});
+
+// Tambahkan event listener untuk menyembunyikan progres bar saat halaman pertama dibuka
+window.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('progress-container').classList.add('hidden');
+});
+
+
+  </script>
+
+  <!-- aos initialize -->
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

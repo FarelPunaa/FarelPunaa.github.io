@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,600;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root{
+    --primary-color: #4b208c;
+
+    --small-font:17px;
+    --medium-font:25px;
+    --hard-font:32px;
+    --veryHard-font:50px;
+}
+.navbar-brand{
+    font-weight: 700;
+    font-style: normal;
+}
+/* Menetapkan latar belakang untuk nav-link saat halaman aktif */
+.nav-item.aktif .nav-link,
+.nav-link:focus,
+.nav-link:hover {
+  color: var(--primary-color); /* Warna teks */
+  transition: background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+/* Mengatur latar belakang saat nav-link diklik */
+.nav-link:active {
+  color: var(--primary-color); /* Warna teks */
+}
+
+/* Untuk memberikan latar belakang pada nav-link saat halaman aktif */
+.navbar-nav .nav-item.aktif .nav-link {
+    color: var(--primary-color); /* Warna teks */
+}    
+  /* Gaya CSS untuk tombol arah ke atas */
+  #btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Tombol akan disembunyikan secara default */
+  }
+  #btn-back-to-top.show {
+    display: block; /* Tombol akan muncul saat perlu ditampilkan */
+  }
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+  
+  #progress-bar {
+    height: 5px; /* Tentukan tinggi progres bar */
+    background-color: var(--primary-color); /* Warna progres bar */
+    width: 0; /* Awal lebar progres bar */
+  }
+  
+  .hidden {
+    display: none;
+  }
+.col-md-6 .judul{
+    font-size: var(--veryHard-font);
+    color: var(--primary-color);
+    font-weight: 800;
+    font-style: normal;
+}
+.col-md-6 .sambutan{
+    font-size: 30px;
+    font-weight: 450;
+    font-style: normal;
+}
+.social-container .social-title{
+    font-size: var(--small-font);
+    font-weight: 700;
+    font-style: normal;
+}
+.social-container .social-icon{
+    color: black;
+}
+.custom-btn {
+    border-color: var(--primary-color); /* Warna border */
+    color: black; /* Warna teks */
+}
+
+.custom-btn:hover {
+    background-color: var(--primary-color); /* Warna latar belakang saat hover */
+    border-color: var(--primary-color); /* Warna border saat hover */
+    color: #ffffff; /* Warna teks saat hover */
+}
+.about-title{
+    color: var(--primary-color);
+    font-size: 27px;
+}
+.lead{
+    font-size: var(--small-font);
+}
+.col-sm-4 .gambar{
+    border-radius: 30px;
+}
+.project-title{
+    color: var(--primary-color);
+    font-size: 27px;
+}
+.contact-title{
+    color: var(--primary-color);
+    font-size: 27px;
+}
+.footer{
+    background-color: var(--primary-color);
+}
+/* Extra small devices (phones, 600px and down)*/
+@media only screen and (max-width: 600px) {
+    .col-md-6 .judul{
+        font-size: 34px;
+        color: var(--primary-color);
+        font-weight: 800;
+        font-style: normal;
+    }
+    .col-md-6 .sambutan{
+        font-size: 25px;
+        font-weight: 450;
+        font-style: normal;
+    }
+    .lead{
+        margin-top: 3rem;
+        font-size: 16;
+    }
+    .col-sm-4 .gambar{
+        border-radius: 30px;
+        width: 100px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .col-md-6 .judul{
+        font-size: 32px;
+        color: var(--primary-color);
+        font-weight: 800;
+        font-style: normal;
+    }
+    .col-md-6 .sambutan{
+        font-size: 20px;
+        font-weight: 450;
+        font-style: normal;
+    }
+    .lead{
+        font-size: 13;
+    }
+} 
